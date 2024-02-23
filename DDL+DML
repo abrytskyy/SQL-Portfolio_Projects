@@ -52,9 +52,9 @@ VALUES
   (4, 'Neue Kosmetik', 1,  'Karlsplatz 2', NULL, 'info@neuekosmetik.com', '094109253', 1),
   (5, 'Bio Kosmetik', 2,  'Motzstraße 23', 'Clara Zetkin', 'clara@biokosmetik.org', '093825825', 1),
   (6, 'K-Wien', 1,  'Kärntner Straße 204', 'Maria Rauch-Kallat', 'maria@kwien.org', '093427002', 1),
-  (7, 'Natural Cosmetics', 1,  'Clerkenwell Road 14B', 'Glenda Jackson', 'glena.j@natural-cosmetics.com', '093555123', 1),
-  (8, 'Kosmetik Plus', 1,  'Unter den Linden 1', 'Angela Merkel', 'angela@k-plus.com', '094727727', 1),
-  (9, 'Neue Kosmetik', 1,  'Devonshire Street 92', 'Oliver Cromwell', 'oliver@nic.org', '093202404', 0);
+  (7, 'Natural Cosmetics', 4,  'Clerkenwell Road 14B', 'Glenda Jackson', 'glena.j@natural-cosmetics.com', '093555123', 1),
+  (8, 'Kosmetik Plus', 2,  'Unter den Linden 1', 'Angela Merkel', 'angela@k-plus.com', '094727727', 1),
+  (9, 'Neue Kosmetik', 4,  'Devonshire Street 92', 'Oliver Cromwell', 'oliver@nic.org', '093202404', 0);
   
 select * from customer;
 
@@ -88,6 +88,24 @@ select * from invoice;
 and their average amount. Format the average as a floating-point number with 6 decimal places. Return only those 
 countries where their average invoice amount is greater than the average Invoice amount over all invoices. 
 
+--Austria 2 4825.000000
+
+select country_name, count(i.id), round(avg(total_price),6) avg_amount from country c
+inner join city ci
+on c.id = ci.country_id
+inner join customer cu
+on ci.id = cu.city_id
+inner join invoice i
+on cu.id = i.customer_id
+group by 1
+having round(avg(total_price),6) > (select avg(total_price) from invoice)
+
+
+
+
 --2.Customer Spending 
 --List all customers who spent 25% or less than the average amount spent on all invoices. For each customer, 
 display their name and the amount spent to 6 decimal places. Order the result by the amount spent from high to low.
+
+--Kosmetikstudio 360.000000
+--Neue Kosmetik 150.000000
