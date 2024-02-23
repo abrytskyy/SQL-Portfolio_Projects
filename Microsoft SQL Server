@@ -11,7 +11,7 @@ Use the sys.objects table
 
 --Solution 1:
 
-select type_desc, count(*) as count_by_type from sys.objects
+select type_desc, count(*) as CNT from sys.objects
 group by type_desc
 order by 2 desc
 
