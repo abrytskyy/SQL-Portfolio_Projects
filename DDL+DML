@@ -79,3 +79,15 @@ VALUES
 (6, 'in_cbd304872ca6257716bcab8fc43204d7', 4, 2, 150);
 
 select * from invoice;
+
+
+
+
+--1. Invoices per Country 
+--A business is analyzing data by country. For each country, display the country name, total number of invoices, 
+and their average amount. Format the average as a floating-point number with 6 decimal places. Return only those 
+countries where their average invoice amount is greater than the average Invoice amount over all invoices. 
+
+--2.Customer Spending 
+--List all customers who spent 25% or less than the average amount spent on all invoices. For each customer, 
+display their name and the amount spent to 6 decimal places. Order the result by the amount spent from high to low.
