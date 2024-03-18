@@ -111,8 +111,9 @@ with tmp as (select customer_name, sum(total_price) as customer_sum from custome
 join invoice i
 on c.id=i.customer_id
 group by customer_name)
-select customer_name, customer_sum from tmp
-where customer_sum <= 0.25*(select avg(customer_sum) from tmp)
+select customer_name, round(customer_sum,6) from tmp
+where customer_sum <= 0.25*(select avg(round(customer_sum,6)) from tmp)
+order by 2 desc
 	
 --Kosmetikstudio 360.000000
 --Neue Kosmetik 150.000000
