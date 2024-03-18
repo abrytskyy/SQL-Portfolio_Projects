@@ -54,7 +54,7 @@ VALUES
   (6, 'K-Wien', 1,  'Kärntner Straße 204', 'Maria Rauch-Kallat', 'maria@kwien.org', '093427002', 1),
   (7, 'Natural Cosmetics', 4,  'Clerkenwell Road 14B', 'Glenda Jackson', 'glena.j@natural-cosmetics.com', '093555123', 1),
   (8, 'Kosmetik Plus', 2,  'Unter den Linden 1', 'Angela Merkel', 'angela@k-plus.com', '094727727', 1),
-  (9, 'Neue Kosmetik', 4,  'Devonshire Street 92', 'Oliver Cromwell', 'oliver@nic.org', '093202404', 0);
+  (9, 'New Line Cosmetics', 4,  'Devonshire Street 92', 'Oliver Cromwell', 'oliver@nic.org', '093202404', 0);
   
 select * from customer;
 
